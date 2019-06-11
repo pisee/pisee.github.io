@@ -1,7 +1,7 @@
 # (string) Title of your wiki
-title: 
+title: Doni의 주저리 노트
 # (string) Description of your wiki
-description: 
+description: 이것저것 
 # (boolean) Enable/disable wiki page list in sidebar
 show_wiki_pages: true
 # (integer) Maximum number of wiki page to shown in sidebar
@@ -71,13 +71,13 @@ defaults:
     scope:
       path: "" # an empty string here means all files in the project
     values:
-      layout: "git-wiki-default"
+      layout: "git-wiki-bs-github"
  -
     scope:
       path: ""
       type: "pages"
     values:
-      layout: "git-wiki-default"
+      layout: "git-wiki-bs-github"
  -
     scope:
       path: ""
