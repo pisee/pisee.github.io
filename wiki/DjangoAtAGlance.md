@@ -1,4 +1,4 @@
-# Django 훑어보기
+# Django at a glance
 
 ## 모델 설계  
 Django는 데이터베이스의 구조를 파이썬코드로 표현할 수 있도록 ORM(Object-relational Mapper)이 함께 제공된다.  
