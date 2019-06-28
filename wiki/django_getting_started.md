@@ -7,9 +7,12 @@ Django는 빠른 개발과 깨끗하고 실용적인 디자인을 장려하는 �
 2003년 시작된 파이썬 기반 오픈소르 웹 어플리케이션 프레임워크로 MVC(혹은 MVT)패턴을 따른다.  
 2005년 오픈소스로 공개되어 구글앱엔진, 인스타그램 등에서 채택되어 사용되고있다.  
 
-### MVC
+### MVC 패턴
+
 
 ### Django vs Flask
+
+
 
 ## Django 설치
 1. 파이썬설치  
@@ -36,11 +39,16 @@ Django는 빠른 개발과 깨끗하고 실용적인 디자인을 장려하는 �
 
 ## Django 프로젝트 생성
 1. 장고프로젝트를 생성한다.  
+    - 방법1. 현재디렉토리에 mysite 프로젝트를 생성한다.  
+    - mysite라는 디렉토리가 생성되고 내부에 같은 이름의 설정 디렉토리가 내부에 성성된다.  
     ```
     $ django-admin startproject mysite
     ```
-     디렉토리에서 mysite라는 디렉토리를 생성한다.
-1. mysite 폴더로 이동한다.  
+    - 벙법2. 현재디렉토리를 프로젝트 root로 mysite라는 설정 디렉토리가 내부에 성성된다.  
+    ```
+    $ django-admin startproject mysite .
+    ```
+1. ```manage.py``` 가 있는 폴더로 이동한다.(위 방법1 의 경우, mysite 디렉토리 내부)
     ```
     $ cd mysite
     ```
@@ -66,11 +74,27 @@ mysite/
         urls.py
         wsgi.py
 </pre>
-- mysite/ 디렉토리 바깥의 디렉토리는 단순히 프로젝트를 담는 공간입니다. 이 이름은 Django 와 아무 상관이 없으니, 원하는 이름으로 변경하셔도 됩니다.  
-- manage.py: Django 프로젝트와 다양한 방법으로 상호작용 하는 커맨드라인의 유틸리티 입니다. manage.py 에 대한 자세한 정보는 django-admin and manage.py 에서 확인할 수 있습니다.  
-- mysite/ 디렉토리 내부에는 프로젝트를 위한 실제 Python 패키지들이 저장됩니다. 이 디렉토리 내의 이름을 이용하여, (mysite.urls 와 같은 식으로) 프로젝트의 어디서나 Python 패키지들을 임포트할 수 있습니다.  
-- mysite/__init__.py: Python으로 하여금 이 디렉토리를 패키지처럼 다루라고 알려주는 용도의 단순한 빈 파일입니다. Python 초심자라면, Python 공식 홈페이지의 패키지를 읽어보세요.  
-- mysite/settings.py: 현재 Django 프로젝트의 환경 및 구성을 저장합니다. Django settings에서 환경 설정이 어떻게 동작하는지 확인할 수 있습니다.  
-- mysite/urls.py: 현재 Django project 의 URL 선언을 저장합니다. Django 로 작성된 사이트의 "목차" 라고 할 수 있습니다. URL dispatcher 에서 URL 에 대한 자세한 내용을 읽어보세요.  
-- mysite/wsgi.py: 현재 프로젝트를 서비스하기 위한 WSGI 호환 웹 서버의 진입점입니다. How to deploy with WSGI를 읽어보세요.  
+- mysite/  
+    - 최상단 디렉토리는 단순히 프로젝트를 담는 공간으로, Django 와 무관하게 원하는 이름으로 변경가능하다.  
+- manage.py  
+    - Django 프로젝트와 다양한 방법으로 상호작용 하는 커맨드라인의 유틸리티로 임의로 변경하지 않도록 주의한다.  
+    - [django-admin and manage.py](https://docs.djangoproject.com/en/2.2/ref/django-admin/) 참고.  
+- mysite/  
+    - 내부 mysite 디렉토리에는 프로젝트를 위한 설정파일과 웹 서비스 실행을 위한 파일등, 실제 Python 패키지들이 저장된다. 
+    - 이 디렉토리 내의 이름을 이용하여, (mysite.urls 와 같은 식으로) 프로젝트의 어디서나 Python 패키지들을 임포트 하는데 사용함.  
+    - 프로젝트 생성후에 이름을 변경하면 귀찮은 작업이 생기므로 변경하지 않도록 잘 결정하는것이 좋다.
+- mysite/\_\_init\_\_.py  
+    - Python으로 하여금 이 디렉토리를 패키지처럼 다루라고 알려주는 용도의 단순한 빈 파일.  
+    - Python 공식 홈페이지 [Packages](https://docs.python.org/3/tutorial/modules.html#tut-packages) 참고.   
+- mysite/settings.py  
+    - 현재 Django 프로젝트의 환경 및 구성과 관련된 설정을 저장. 
+    - [Django settings](https://docs.djangoproject.com/en/2.2/topics/settings/)참고.   
+- mysite/urls.py  
+    - 현재 Django project 의 URL 관련된 설정 및 매핑정보 저장.  
+    - 프로젝트 내에 여러개의 urls파일을 작성하게 되며 그 첫 시작점이 ```mysite/urls.py``` 가 된다. (```settins.py```에서 변경가능)  
+    - [URL dispatcher](https://docs.djangoproject.com/en/2.2/topics/http/urls/) 참고.  
+- mysite/wsgi.py  
+    - 현재 프로젝트를 웹 서비스하기 위한 WSGI 관련 설정. 되도록 수정이나 삭제하지 않는다.
+    - [How to deploy with WSGI](https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/) 참고.  
 
+## Django 명령어
