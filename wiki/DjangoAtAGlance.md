@@ -155,7 +155,7 @@ def year_archive(request, year):
 ## 나만의 템플릿 꾸미기
 Request 에 대한 Reponse을 처리하고 화면을 렌더링하기 위해 Django는 자체 템플릿 기능을 제공하며,  
 이를 활용하여 데이터 바인딩 처리된 리소드로 요청에 응답할 수 있다.  
-- mysite/news/templates/news/year_archive.htm  
+- mysite/news/templates/news/year_archive.html  
 ```python
 {% extends "base.html" %}
 
