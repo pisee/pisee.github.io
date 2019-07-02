@@ -7,12 +7,15 @@ Django는 빠른 개발과 깨끗하고 실용적인 디자인을 장려하는 �
 2003년 시작된 파이썬 기반 오픈소르 웹 어플리케이션 프레임워크로 MVC(혹은 MVT)패턴을 따른다.  
 2005년 오픈소스로 공개되어 구글앱엔진, 인스타그램 등에서 채택되어 사용되고있다.  
 
-### MVC 패턴
+## MVC 패턴과 MTV
+웹프로그래밍에서 자주 사용하는 패턴으로 Model-View-Controller를 의미한다.
+- Model: DB의 구조를 결정하고 데이터를 담는다.  
+- View: 사용자에게 보여지는 UI를 담당한다.  
+- Controller: 기능을 구현하고 비지니스를 명세화 한다. 
 
-
-### Django vs Flask
-
-
+장고에서도 MVC 패턴을 적용하여 어플리케이션을 구현한다.  
+하지만 각각에 해당하는 장고의 명칭은 Model(:Model)-Template(:View)-View(:Controller) 로,  
+View의 의미가 일반적인 MVC 패턴에서 말하는 'Controller'의 역할을 한다. 
 
 ## Django 설치
 1. 파이썬설치  
@@ -97,4 +100,72 @@ mysite/
     - 현재 프로젝트를 웹 서비스하기 위한 WSGI 관련 설정. 되도록 수정이나 삭제하지 않는다.
     - [How to deploy with WSGI](https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/) 참고.  
 
-## Django 명령어
+## Django 앱 생성
+프로젝트가 root 경로에서 app을 하나 생성한다.
+```
+python manage.py startapp news
+```
+## Django 앱 구조
+<pre>
+mysite/
+    manage.py
+    mysite/
+    news/
+        migrations/
+        __init__.py
+        admin.py
+        apps.py
+        models.py
+        tests.py
+        views.py
+</pre>
+- models.py
+    - 장고에서 DB의 명세를 관리하기 위해 사용하는 파일
+    - 속성 및 컬럼의 데이터 타입, 제약사항등을 정의하고 Django ORM 기능을 사용한다.
+- admin.py
+    - model을 이용해 DB테이블이 생성되면 이에 대한 CRUD등을 수행할 수 있도록 해주는 어드민 설정기능
+    - Django의 기본 관리자 페이지를 통해 생성한 모델(DB 테이블)을 확인해 볼수 있다.
+- views.py
+    - 기능에 대한 구현부, 데이터를 가공하고 원하는 비지니스로직을 구현한다.
+    - Class Based view와 Function Based view 두가지가 있다. 
+- apps.py
+    - Django 앱에 대한 설정파일
+    - Django AppConfig를 활용하여 내가 만든 앱을 장고프로젝트에 등록하고 활용할 수 있도록 해준다.
+- urls.py
+    - 현재 Django App 의 URL 관련된 설정 및 매핑정보 저장.
+    - url을 통한 호출을 어떤 view에 매핑할지를 기록한다.
+    - 보통 프로젝트 urls.py와 각 앱에 해당되는 urls.py로 구성한다.
+- templates
+    - Html과 django 템플릿 코드로 작성된 화면 템플릿등을 저장하는 공간이다.
+- migrations
+    - Model 변경에 따른 DB의 변경점을 기록해두는 공간이다. 
+    - Django 명령어를 이용해 DB에 모델의 변경내용을 적용할 때 활용한다.
+## Django 기본 명령어
+- ```django-admin startproject```  
+    - 장고 프로젝트를 생성한다.
+- ```startapp```
+    -   프로젝트의 기능단위인 앱을 생성한다.
+- ```makemigrations```
+    - 어플리케이션의 변경사항을 추적하여 DB에 적용할 내용을 정리한다.
+- ```sqlmigrate```
+    - 실행할 SQL을 출력한다.
+- ```migrate```
+    - 변경사항을 DB에 반영한다.
+- ```showmigrations```
+    - 프로젝트의 DB 변경사항 목록과 상태를 출력한다.
+- ```runserver```
+    - 테스트 서버를 실행한다.
+- ```dumpdata```
+    - 현재 DB의 내용을 백업할 때 사용한다.
+- ```loaddata```
+    - 백업 파일에서 DB로 내용을 복구한다.
+- ```flush```
+    - DB의 스키마는 그대로 두고 데이터만 삭제한다.
+- ```shell```
+    - 장고 쉘을 실행한다. 모델등을 로드하여 테스트 해볼수 있다.
+- ```dbshell```
+    - DB에 접근할 수 있는 쉘을 실행한다. SQL을 이용해 직접 수정하고 싶을 경우 사용한다.
+- ```createsuperuser```
+    - 관리자 계정을 생성한다.
+- ```changepassword```
+    - 계정의 비밀번호를 수정한다.
