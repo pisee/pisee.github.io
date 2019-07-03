@@ -1,4 +1,4 @@
-# install
+# Linux on dex install
 
 # config
 - langauage pack
