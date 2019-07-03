@@ -7,6 +7,6 @@ redirect_from: "/"
 
 2) Edit this page with your content
 
-
+3) why so serious
 NOTE: 
 - do not delete "redirect_from" rule from the front matter of this file
