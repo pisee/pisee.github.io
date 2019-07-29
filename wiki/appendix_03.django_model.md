@@ -7,7 +7,7 @@
 보통 app 생성시 기본으로 생성된 models.py 파일에 작성합니다  
 다음은 model class 작성예입니다  
 
-```
+```python
 from django.db import models
 
 class Visit(models.Model):
@@ -24,7 +24,7 @@ class Visit(models.Model):
 모델 클래스는 models.Model을 상속하여 작성합니다  
 모델의 필드들을 작성합니다  
 다음은 model class에서 사용할수 있는 field type, option 들 입니다
-```
+```python
 - model fied type
 . primary key : AutoField
 . 문자열 : CharField, TextField, SlugField
@@ -51,7 +51,7 @@ class Visit(models.Model):
 
 ### relationships
 Visit와 VisitUser 객체가 1대 N일때 아래와 같이 ForeignKey로 relationships을 정의합니다
-```
+```python
 class VisitUser(models.Model):
     visit_user_id = models.AutoField(primary_key=True)
     visit = models.ForeignKey(Visit, on_delete=models.CASCADE, db_column='VISIT_ID')
@@ -60,7 +60,7 @@ class VisitUser(models.Model):
 ```
 
 1:1 관계는 OneToOneField로 정의합니다  
-```
+```python
 ex)
 class EntryDetail(models.Model):
     entry = models.OneToOneField(Entry, on_delete=models.CASCADE)

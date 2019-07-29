@@ -1,28 +1,28 @@
 # Django query
 ## query
 Visit 모델객체의 전체 데이터를 조회합니다
-```
+```python
 qs = Visit.objects.all()
 ```
 Visit 모델객체에서 delete_yn='N'인 값을 조회합니다
-```
+```python
 qs = Visit.objects.filter(delete_yn='N')
 ```
 해당 query set의 count를 조회합니다
-```
+```python
 tot_cnt = qs.count()
 ```
 해당 query set을 visit_id의 역순으로 조회합니다
-```
+```python
 qs = qs.order_by('-visit_id')
 ```
 해당 query set을 offet부터 limit갯수만큼 paging(slicing)합니다
-```
+```python
 qs = qs[offset:limit]
 ```
 
 filter문에서 다음과 같은 조건을 사용할 수 있습니다
-```
+```python
 . and 조건
   queryset = 모델명.queryset.all()
   queryset = queryset.filter(필드1=값1, 필드2=값2)
@@ -61,33 +61,38 @@ vu_list = visit.visituser_set.all()
 ```
 
 추가 예제
-```
+```python
 # VisitCar 객체의 visit_car_gate='E' 인 Visit 객체 조회
 qs = Visit.objects.filter(visitcar__visit_car_gate='E')
 print(qs.first().visit_id)
 print(connection.queries[-1])
-
+``` 
+```
 sql문 =>
 SELECT "TBL_VISIT"."visit_id", ...
 FROM "TBL_VISIT" INNER JOIN "TBL_VISIT_CAR" ON 
 ("TBL_VISIT"."visit_id" = "TBL_VISIT_CAR"."VISIT_ID") 
 WHERE "TBL_VISIT_CAR"."visit_car_gate" = \'E\' ...
-
+```
+```python
 # Visit 객체의 visit_id=1 인 VisitCar 객체 조회
 qs = VisitCar.objects.filter(visit__visit_id=1)
 print(qs.first().visit_car_id)
 print(connection.queries[-1])
-
+```
+```
 sql문 =>
 SELECT "TBL_VISIT_CAR"."visit_car_id", ...
 FROM "TBL_VISIT_CAR" 
 WHERE "TBL_VISIT_CAR"."VISIT_ID" = 1 ...
-
+```
+```python
 # visit_car_id=1 인 VisitCar 객체에서 Visit 객체를 참조
 visitCar = VisitCar.objects.get(visit_car_id=1)
 print(visitCar.visit.visit_id)
 print(connection.queries[-2:-1])
-
+```
+```
 sql문 =>
 SELECT "TBL_VISIT_CAR"."visit_car_id", ...
 FROM "TBL_VISIT_CAR" 
@@ -96,11 +101,14 @@ WHERE "TBL_VISIT_CAR"."visit_car_id" = 1
 SELECT "TBL_VISIT"."visit_id", ...
 FROM "TBL_VISIT" 
 WHERE "TBL_VISIT"."visit_id" = 1'
-
+```
+```python
 # visit_car_id=1 인 VisitCar 객체에서 Visit 객체를 참조(join)
 visitCar = VisitCar.objects.select_related().get(visit_car_id=1)
 print(visitCar.visit.visit_id)
 print(connection.queries[-1])
+```
+```
 sql문 =>
 SELECT "TBL_VISIT_CAR"."visit_car_id", ...
 "TBL_VISIT"."visit_id", ...
@@ -149,7 +157,7 @@ visit.delete()
 다음과 같은 형식으로 native sql문을 사용할 수 있습니다
 ```
 ex)
-	sql_stmt = '''
+    sql_stmt = '''
     SELECT V.VISIT_ID
         , V.VISIT_REQUEST_USER_ID
         . . .
@@ -186,15 +194,30 @@ qs = Visit.objects.extra(
 ```
 
 ## transaction
-class method에 다음과 같이 명시적(explicitly)으로 transaction을 설정할 수 있습니다
+기본적으로 ORM이 모든 쿼리를 호출할 때마다 자동으로 커밋을 하게 됩니다.  
+### 각각의 HTTP요청을 트랜잭션으로 처리하려면..
+Setting.py의 DATABASES 옵션에 ATOMIC_REQUEST 설정을 통해 모든 웹 요청을 쉽게 트랜잭션 처리할 수 있습니다.
+```python
+DATABASE = {
+    'default':{
+        #....
+        'ATOMIC_REQEUSTS': True,
+    }
+}
 ```
+ATOMIC_REQUEST 설정은 에러가 발생할 때 데이터베이스가 롤백됩니다.  
+좀더 명시적으로 선언을 통해 transaction을 설정할 수 있습니다.  
+```python
+from django.db import transaction
+#...
+
 class VisitCreateCar(APIView):
 	@transaction.atomic
 	def post(self, request):
 ```
 
 function에도 transaction을 설정할수 있습니다
-```
+```python
 @transaction.atomic
 def viewfunc(request):
     # This code executes inside a transaction.
@@ -217,7 +240,6 @@ DATABASES = {
     }
 }
 ```
-
 django framework은 "Persistent connections"이라는 db접속방식을 사용합니다  
 이 방식에서는 CONN_MAX_AGE라는 값을 사용합니다  
 
