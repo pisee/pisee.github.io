@@ -6,7 +6,7 @@
 ## 오픈소스 컨트리뷰션 
 오픈소스 프로젝트에 참여하는 데는 여러 가지 방법이 있으며, 
 몇 가지 팁을 통해 경험을 최대한 활용할 수 있습니다.
-![contributions](image/contributions.png)
+![contributions](images/contributions.png)
 
 오픈소스 프로젝트에는 다음과 같은 역할자가 있습니다:
 - Author: 이 프로젝트를 만든 사람 혹은 조직
@@ -16,7 +16,7 @@
 - Community Members: 프로젝트를 사용하는 사람들. 대화에서 적극적이거나 프로젝트 방향에 대한 의견을 표명할 수 있습니다.
 
 ### 참고
-- [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
+- [How to Contribute to Open Source](https://opensource.guide/ko/how-to-contribute/)
 
 # 어떻게 오픈소스 프로젝트에 컨트리뷰션 할까?
 ## 1. 오픈소스 프로젝트의 사용 법 이해하기

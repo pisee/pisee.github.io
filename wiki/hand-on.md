@@ -15,6 +15,7 @@
 1. 버그에 대한 [issue](https://code.sdsdev.co.kr/codecraft/ColorWall/issues) 등록하기
     - 등록된 issue ID 기억하기
 1. https://code.sdsdev.co.kr/codecraft/ColorWall ```Fork```한 후 fork된 레파지토리 ```clone``` 하기
+    1. https://code.sdsdev.co.kr/codecraft/ColorWall ```Fork```하기
     1. fork된 레파지토리 ```clone``` 하기
         ```
         git clone https://code.sdsdev.co.kr/{username}/ColorWall.git
@@ -50,6 +51,15 @@
         ```
 1. git add, commit, push
     - pull request가 merge될 경우 issue가 자동으로 close 되도록 Commit Message 작성
+    ```
+    $ git add .
+    ```
+    ```
+    $ git commit -m "fix #[ISSUE_NUMBER]"
+    ```
+    ```
+    $ git push
+    ```
 1. pull request 작성하기
     1. fork 받은 repository에서 "new pull request"
     1. Pull Request 작성  
@@ -58,4 +68,4 @@
         - head fork : fork한 레파지토리 선택  
         - compare : fork한 레파지토리의 머지 요청할 브랜치
 1. Code Review 확인하여 요구사항 반영하기
-1. Merge 확인하기
+1. "pull request" Merged 확인하기

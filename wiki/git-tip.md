@@ -63,6 +63,10 @@
     SOURCE_BRANCH Conflict Message Area
     ```
     - 커밋 후 다시 머지를 시도합니다.
+1. 다른 브랜치의 일부 커밋만 반영하고 싶을때 
+    ```
+    $ git cherry-pick [HASH(COMMIT ID)]
+    ```
 1. 커밋 메세지 수정
     ```
     $ git commit --amend
@@ -70,6 +74,102 @@
 1. 커밋 로그 정리
     ```
     $ git rebase -i [HASH(COMMIT ID)]
+    ```
+    (EX. 예시)
+    ```
+    $git log --graph
+    * commit b3e1c0a09e69248c8d2d94729bef90a8d1515e00 (HEAD -> master)
+    | Author: dongseok lee 
+    | Date:   Tue Sep 17 21:00:18 2019 +0900
+    |
+    |     add 2
+    |
+    * commit 718fca6bc3192b4b45542bc7ea73dee192c15727
+    | Author: dongseok lee 
+    | Date:   Tue Sep 17 21:00:08 2019 +0900
+    |
+    |     add 1
+    |
+    * commit be9444aa0a1c13a0bb200795ee631127a73eb84a
+    Author: dongseok lee 
+    Date:   Tue Sep 17 20:48:10 2019 +0900
+
+        add readme
+    ```
+    ```
+    $ git rebase -i be9444aa0a1c13a0bb200795ee631127a73eb84a
+    ```
+    ```bash
+    pick 718fca6 add 1
+    squash b3e1c0a add 2  # ====> change pick -> squash
+
+    # Rebase be9444a..b3e1c0a onto be9444a (2 commands)
+    #
+    # Commands:
+    # p, pick <commit> = use commit
+    # r, reword <commit> = use commit, but edit the commit message
+    # e, edit <commit> = use commit, but stop for amending
+    # s, squash <commit> = use commit, but meld into previous commit
+    # f, fixup <commit> = like "squash", but discard this commit's log message
+    # x, exec <command> = run command (the rest of the line) using shell
+    # b, break = stop here (continue rebase later with 'git rebase --continue')
+    # d, drop <commit> = remove commit
+    # l, label <label> = label current HEAD with a name
+    # t, reset <label> = reset HEAD to a label
+    # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+    # .       create a merge commit using the original merge commit's
+    # .       message (or the oneline, if no original merge commit was
+    # .       specified). Use -c <commit> to reword the commit message.
+    #
+    # These lines can be re-ordered; they are executed from top to bottom.
+    #
+    # If you remove a line here THAT COMMIT WILL BE LOST.
+    #
+    # However, if you remove everything, the rebase will be aborted.
+    #
+    # Note that empty commits are commented out
+    ```
+    ```bash
+    # This is a combination of 2 commits.
+    # This is the 1st commit message:
+
+    add 1
+
+    # This is the commit message #2:
+
+    add 2
+
+    # Please enter the commit message for your changes. Lines starting
+    # with '#' will be ignored, and an empty message aborts the commit.
+    #
+    # Date:      Tue Sep 17 21:00:08 2019 +0900
+    #
+    # interactive rebase in progress; onto be9444a
+    # Last commands done (2 commands done):
+    #    pick 718fca6 add 1
+    #    squash b3e1c0a add 2
+    # No commands remaining.
+    # You are currently rebasing branch 'master' on 'be9444a'.
+    #
+    # Changes to be committed:
+    #       modified:   README.md
+    #
+    ```
+    ```
+    $ git log --graph
+    * commit a36eef2ed7084c41c94718aec779cf9c5e10030e (HEAD -> master)
+    | Author: dongseok lee <ds0703.lee@samsung.com>
+    | Date:   Tue Sep 17 21:00:08 2019 +0900
+    |
+    |     add 1
+    |
+    |     add 2
+    |
+    * commit be9444aa0a1c13a0bb200795ee631127a73eb84a
+    Author: dongseok lee <ds0703.lee@samsung.com>
+    Date:   Tue Sep 17 20:48:10 2019 +0900
+
+        add readme
     ```
 - 참고
     - [Github workflow](http://guides.github.com/introduction/flow/)  
@@ -196,4 +296,4 @@ Gist는 샘플 소스코드 또는 다양한 메세지 등을 텍스트 형식�
 - 참고
     - [Github Pages](http://pages.github.com/)
     - [GitHub Pages Basics](http://help.github.com/en/categories/github-pages-basics)  
-
+    - [User, Organization, and Project Pages](http://help.github.com/en/articles/user-organization-and-project-pages)
