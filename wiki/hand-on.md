@@ -18,7 +18,7 @@
     1. https://code.sdsdev.co.kr/codecraft/ColorWall ```Fork```하기
     1. fork된 레파지토리 ```clone``` 하기
         ```
-        git clone https://code.sdsdev.co.kr/{username}/ColorWall.git
+        git clone https://code.sdsdev.co.kr/[username]/ColorWall.git
         ```
     1. branch확인
         ```

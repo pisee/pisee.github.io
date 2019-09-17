@@ -218,17 +218,17 @@ Pull request 설명이나 Commit Message에 아래의 Keyword를 포함시켜 �
 1. git remote 확인
     ```
     $ git remote -v
-    origin  http://github.com/{my_username}/{fork_repository}.git (fetch)
-    origin  http://github.com/{my_username}/{fork_repository}.git (push)
+    origin  http://github.com/[my_username]/[fork_repository].git (fetch)
+    origin  http://github.com/[my_username]/[fork_repository].git (push)
     ```
 1. ```upstream``` 으로 git remote 추가
     ```
-    $ git remote add upstream https://github.com/{origin_username}/{origin_repository}.git
+    $ git remote add upstream https://github.com/[origin_username]/[origin_repository].git
     $ git remote -v
-    origin  http://github.com/{my_username}/{fork_repository}.git (fetch)
-    origin  http://github.com/{my_username}/{fork_repository}.git (push)
-    upstream http://github.com/{origin_username}/{origin_repository}.git (fetch)
-    upstream http://github.com/{origin_username}/{origin_repository}.git (push)
+    origin  http://github.com/[my_username]/[fork_repository].git (fetch)
+    origin  http://github.com/[my_username]/[fork_repository].git (push)
+    upstream http://github.com/[origin_username]/[origin_repository].git (fetch)
+    upstream http://github.com/[origin_username]/[origin_repository].git (push)
     ```
 1. pull or fetch
     ```bash
@@ -281,8 +281,8 @@ Gist는 샘플 소스코드 또는 다양한 메세지 등을 텍스트 형식�
     - 사내 GitHub Pages 생성시 : `http://code.sdsdev.co.kr/gist`  
     - public GitHub Pages 생성시 : `http://gist.github.com`
 - Your Gist
-    - 사내 GitHub Pages 생성시 : `http://code.sdsdev.co.kr/gist/{username}`  
-    - public GitHub Pages 생성시 : `http://gist.github.com/{username}`
+    - 사내 GitHub Pages 생성시 : `http://code.sdsdev.co.kr/gist/[username]`  
+    - public GitHub Pages 생성시 : `http://gist.github.com/[username]`
 - 참고
     - [Creating gists](http://help.github.com/en/articles/creating-gists)  
 
@@ -291,8 +291,8 @@ Gist는 샘플 소스코드 또는 다양한 메세지 등을 텍스트 형식�
 - 각 유저의 도메인을 할당하는 것도 가능합니다. 이러한 기능을 이용하여 공개된 블로그를 활용해 볼 수도 있습니다. 
 - [Github Pages](http://pages.github.com/) 생성방법을 참고하세요
 - GitHub Pages 서비스 되는 URL은 아래와 같습니다.
-    - 사내 GitHub Pages 생성시 : `http://code.sdsdev.co.kr/pages/{username}/{username}.github.io/`  
-    - public GitHub Pages 생성시 : `http://{username}.github.io`
+    - 사내 GitHub Pages 생성시 : `http://code.sdsdev.co.kr/pages/[username]/[username].github.io/`  
+    - public GitHub Pages 생성시 : `http://[username].github.io`
 - 참고
     - [Github Pages](http://pages.github.com/)
     - [GitHub Pages Basics](http://help.github.com/en/categories/github-pages-basics)  
