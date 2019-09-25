@@ -35,12 +35,12 @@
     # setting.py
     INSTALLED_APPS = [
         ...
+        'django.contrib.staticfiles',
+        ...
         'debug_toolbar',
     ]
 
     MIDDLEWARE = [
-        ...
-        'django.contrib.staticfiles',
         ...
         'debug_toolbar.middleware.DebugToolbarMiddleware', 
     ]
