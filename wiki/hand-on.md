@@ -29,7 +29,7 @@
         ```
         $ git checkout -b [BRANCH_NAME] origin/[BRANCH_NAME]
 1. 버그 수정 
-    - hint: ascii8x8.py
+    <!-- - hint: ascii8x8.py
         ```python
         def draw_chr(ch, wall, foreground, background, x_offset=0, y_offset=0):
         """
@@ -48,7 +48,7 @@
                     wall.set_pixel(y + y_offset, x + x_offset, background)
                 else:
                     wall.set_pixel(y + y_offset, x + x_offset, foreground)
-        ```
+        ``` -->
 1. git add, commit, push
     - pull request가 merge될 경우 issue가 자동으로 close 되도록 Commit Message 작성
     ```

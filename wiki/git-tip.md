@@ -175,7 +175,8 @@
     - [Github workflow](http://guides.github.com/introduction/flow/)  
     - [Pro git](http://git-scm.com/book/en/v2)  
     - [git-tips](http://github.com/git-tips/tips)  
-
+    - [git-cheat-sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+    
 ### 커밋메세지 작성법
 1. 커밋메세지 Style(영문작성 기준)
     - Subject와 Body는 한줄 비워 구분한다.

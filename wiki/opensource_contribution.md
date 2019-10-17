@@ -1,7 +1,18 @@
 # OpenSource Contributions
 다른 사람들과 협력하거나 오픈소스가 어떻게 작동하는지 이해하는 방법을 배우는 것이 목표라면, 기존 프로젝트에 기여하는 것이 좋은 방법입니다.  
-이미 활용하고 있거나 관심있는 프로젝트부터 시작해보세요.  
-프로젝트에 기여하는 것은 오타를 수정하거나 문서를 업데이트하는 것 같은 간단한것도 가능합니다.  
+
+1. 이미 활용하고 있거나 관심있는 프로젝트부터 시작해보세요.  
+    - [gitstar-ranking](https://gitstar-ranking.com/)
+    - [Spring Framework](https://github.com/spring-projects/spring-framework/issues)
+1. 오타를 수정하거나 문서를 업데이트하는 것 같은 간단한것도 가능합니다.  
+    - [Fixed Typo PR](https://github.com/spring-projects/spring-framework/pull/23788)
+1. good first issue 를 먼저 해보는것도 좋은 방법입니다.
+    - [vuejs-good first issue](https://github.com/vuejs/vue/labels/good%20first%20issue)
+    - [Reactjs-good first issue](https://github.com/facebook/react/labels/good%20first%20issue)
+1. 최근 Major Version up 릴리즈를 한 Projects를 확인해 보세요.
+    - [Tensorflow-good first issue](https://github.com/tensorflow/tensorflow/labels/good%20first%20issue)
+1. 문서 번역등의 컨트리뷰션도 좋은 방법입니다.
+    - [keras-docs-ko](https://github.com/keras-team/keras-docs-ko) 
 
 ## 오픈소스 컨트리뷰션 
 오픈소스 프로젝트에 참여하는 데는 여러 가지 방법이 있으며, 
@@ -117,9 +128,31 @@ pull request은 완료된 작업을 나타내지 않아도됩니다. 일반적�
 1. 변경점을 테스트합니다! 
 1. 당신의 능력을 최대한 발휘하여 프로젝트 스타일에 기여하십시오. 
 
+### pull request Tip
+1. 하나의 PR에 많은 기능, 이슈를 해결하지 마세요. PR은 작게 만들수록 좋습니다.
+1. Commit 은 잦게 쪼개고 한번에 리뷰어가 리뷰할 수 있을정도의 Line 수를 고려하세요
+1. 비슷한 이슈는 묶어서 한번에 처리하면 좋습니다.
+1. PR을 요청할 경우 기본적으로 테스트하여 확인 후 요청합니다.
+
+### Contributor License Agreement (CLA)
+- 오픈 소스 프로젝트를 유지 관리하는 경우 프로젝트를 관리하는 오픈 소스 라이센스를 선택할 수 있습니다. 이것은 프로젝트의 기여자에 대한 암시 적 합의를 제공하는 반면, 기여자 라이센스 계약 (CLA) 은 이러한 조건을 명시적이고 이러한 계약에 대한 기록을 제공합니다.  
+- CLA의 목적은 프로젝트 산출물의 관리인이 선택한 라이센스에 따라 배포 할 수 있도록 모든 컨트리뷰션에 대해 필요한 소유권 또는 권리 부여를 갖도록 보장하는 것입니다.  
+    - [Reactjs CLA](https://github.com/facebook/react/pull/17118)  
+    - [guava CLA](https://github.com/google/guava/pull/3529)  
+
 #### 참고
 - [Creating a pull request template](http://help.github.com/en/articles/creating-a-pull-request-template-for-your-repository)
 - [Fork a repo](http://help.github.com/en/articles/fork-a-repo)  
+- [SAP CLA](https://gist.github.com/CLAassistant/bd1ea8ec8aa0357414e8)
+- [CLA assistant](https://cla-assistant.io/)
+- [CLA-bot](https://colineberhardt.github.io/cla-bot/#installing-cla-bot)
+
+#### 참고
+- [Creating a pull request template](http://help.github.com/en/articles/creating-a-pull-request-template-for-your-repository)
+- [Fork a repo](http://help.github.com/en/articles/fork-a-repo)  
+- [SAP CLA](https://gist.github.com/CLAassistant/bd1ea8ec8aa0357414e8)
+- [CLA assistant](https://cla-assistant.io/)
+- [CLA-bot](https://colineberhardt.github.io/cla-bot/#installing-cla-bot)
 
 ## 5. 결과기다리기
 컨트리뷰션 후 다음 중 하나의 결과를 받을 수 있습니다.
