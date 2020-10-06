@@ -65,13 +65,18 @@ bash-5.0# cd /var/lib/postgresql/data
 bash-5.0# vi pg_hba.conf
 
 #IPv4
-host    all    all    127.0.0.1/32    trust --> 
-host    all    all    0.0.0.0/0       password 로 수정 저장
+host    all    all    127.0.0.1/32    trust   # --> 
+host    all    all    0.0.0.0/0       password  #로 수정 저장
 
 bash-5.0# vi postgresql.conf
 
 listen_addressed = '*'
 port = 5432 
-수정 저장
+# 수정 저장
+
+bash-5.0# exit
+
+# 도커 재시작
+$ docker restart some-postgres
 ```
 
