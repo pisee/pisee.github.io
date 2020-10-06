@@ -45,7 +45,15 @@ bash-5.0# psql -U postgres
 psql (9.6.19)
 Type "help" for help.
 
-postgres=#
+postgres=# CREATE USER doni WITH PASSWORD 'doni';
+CREATE ROLE
+postgres=# CREATE DATABASE doni;
+CREATE DATABASE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE doni TO doni;
+GRANT
+postgres=# \l
+postgres=# \q
+bash-5.0# exit
 ```
 
 
