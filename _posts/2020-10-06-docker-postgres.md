@@ -37,7 +37,7 @@ $ docker run -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=mysecretpass
 $ docker ps -a
 ```
 
-# 컨테이너 접속
+# 컨테이너 접속/database,user 생성
 ```bash
 $ docker exec -it some-postgres bash
 
@@ -56,4 +56,22 @@ postgres=# \q
 bash-5.0# exit
 ```
 
+# 컨테이너 접속/ 데이터베이스 접속설정 수정
+postgres sample 은 ```/usr/local/share/postgresql```
+```bash
+$ docker exec -it some-postgres bash
+bash-5.0# cd /var/lib/postgresql/data
+
+bash-5.0# vi pg_hba.conf
+
+#IPv4
+host    all    all    127.0.0.1/32    trust --> 
+host    all    all    0.0.0.0/0       password 로 수정 저장
+
+bash-5.0# vi postgresql.conf
+
+listen_addressed = '*'
+port = 5432 
+수정 저장
+```
 
