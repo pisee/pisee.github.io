@@ -3,7 +3,7 @@ title: docker-postgres
 permalink: /docker-postgres/
 ---
 
-# Docker postgres 설치
+# Docker Postgres 설치
 - 도커허브에서 버전조회  
 https://hub.docker.com/_/postgres?tab=tags  
 
@@ -51,9 +51,13 @@ postgres=# CREATE DATABASE doni;
 CREATE DATABASE
 postgres=# GRANT ALL PRIVILEGES ON DATABASE doni TO doni;
 GRANT
+postgres=# CREATE DATABASE [DB명] WITH OWNER [user명] ENCODING 'UTF-8' TEMPLATE template0;
 postgres=# \l
 postgres=# \q
 bash-5.0# exit
+```
+```bash
+
 ```
 
 # 컨테이너 접속/ 데이터베이스 접속설정 수정
