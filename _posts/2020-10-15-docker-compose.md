@@ -4,7 +4,7 @@ permalink: /docker-compose/
 ---
 
 # Docker-compose 설치
-https://docs.docker.com/compose/install/
+https://docs.docker.com/compose/install/  
 ```bash
 $ com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 $ cd /usr/local/bin/docker-compose
@@ -13,6 +13,7 @@ $ docker-compose --version
 ```
 
 # 설정
+https://docs.docker.com/compose/gettingstarted/  
 ```docker-compse.yml```생성
 ```yml
 version: '3'
