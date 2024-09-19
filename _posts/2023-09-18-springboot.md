@@ -75,7 +75,6 @@ CREATE TABLE IF NOT EXISTS owners (
 
 ---
 
-![bg 90%](https://code.sdsdev.co.kr/storage/user/393/files/ad3022d7-b83e-431d-9771-8d468a0a4189)
 
 ---
 
@@ -205,13 +204,6 @@ spring:
 - JDBC URL: jdbc:h2:mem:hello
 - User Name: sa  
 
-<div style="text-align: center; ">
-  <img src="https://code.sdsdev.co.kr/storage/user/393/files/c61196e0-4bc2-4847-b0f8-76c798aaad62" style="width: 600px; height: 400px;" />
-</div> 
-
----
-
-![bg 70%](https://code.sdsdev.co.kr/storage/user/393/files/dfb8a9cd-f03c-4121-80f2-efe5d3f06f26)
 
 ---
 
@@ -484,10 +476,6 @@ springdoc:
 
 ---
 
-![bg 70%](https://code.sdsdev.co.kr/storage/user/393/files/b579e64e-cac6-4191-b396-c5cea5049f16)
-
----
-
 ### 4.3 Swagger Annotation 활용 - @Tag
 
 <span style = "font-size: 20px">
@@ -532,9 +520,6 @@ public class HelloController {
 ```  
 - 어플리케이션을 재시작한 후 브라우저에서 http://localhost:8080/swagger-ui.html 접속하여 작성된 문서를 확인한다.
 
----
-
-![bg 70%](https://code.sdsdev.co.kr/storage/user/393/files/7ccb83f9-0f20-4616-9cc0-ab5bb228e277)    
 
 ---
 
@@ -591,9 +576,6 @@ public class SwaggerConfig {
 ```
 - 어플리케이션을 재시작한 후 브라우저에서 http://localhost:8080/swagger-ui.html 접속하여 작성된 문서를 확인한다.
 
----
-
-![bg 70%](https://code.sdsdev.co.kr/storage/user/393/files/e2d24b1e-d61c-4737-b8e2-e712bc1dffd3)    
 
 ---
 
@@ -626,14 +608,6 @@ public class SwaggerConfig {
                 .build();
     }
 ```
-
----
-
-![bg 70%](https://code.sdsdev.co.kr/storage/user/393/files/14f2dff6-df96-4a5e-b222-2f68370ddffd)    
-
----
-
-![bg 70%](https://code.sdsdev.co.kr/storage/user/393/files/127557d1-744a-466a-9976-3f8f4fcfbc27)    
 
 ---
 
